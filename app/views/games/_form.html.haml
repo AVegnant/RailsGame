@@ -7,16 +7,13 @@
           %li= msg
 
   .field
-    = f.label :tournament_id
-    = f.number_field :tournament_id
+    = f.label :name
+    = f.text_field :name
   .field
     = f.label :description
     = f.text_field :description
   .field
     = f.label :platform
     = f.text_field :platform
-  .field
-    = f.label :name
-    = f.text_field :name
   .actions
     = f.submit 'Save'

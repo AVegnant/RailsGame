@@ -7,6 +7,16 @@
           %li= msg
 
   .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :game
+    %br
+    - Game.all.each do |g|
+      = g.name
+      = check_box_tag "game[]", g.id, nil, :id => "game_#{g.id}"   #variable
+      %br
+  .field
     = f.label :day
     = f.date_select :day
   .field
@@ -24,8 +34,5 @@
   .field
     = f.label :nb_players_max
     = f.number_field :nb_players_max
-  .field
-    = f.label :name
-    = f.text_field :name
   .actions
     = f.submit 'Save'

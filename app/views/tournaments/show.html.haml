@@ -1,6 +1,12 @@
 %p#notice= notice
 
 %p
+  %b Name:
+  = @tournament.name
+%p
+  %b Games:
+  = @tournament.games
+%p
   %b Day:
   = @tournament.day
 %p
@@ -18,9 +24,6 @@
 %p
   %b Nb players max:
   = @tournament.nb_players_max
-%p
-  %b Name:
-  = @tournament.name
 
 = link_to 'Edit', edit_tournament_path(@tournament)
 \|

@@ -2,26 +2,28 @@
 
 %table
   %tr
+    %th Name
+    %th Games
     %th Day
     %th Time tournament start
     %th Time tournament end
     %th Address
     %th Rules
     %th Nb players max
-    %th Name
     %th
     %th
     %th
 
   - @tournaments.each do |tournament|
     %tr
+      %td= tournament.name
+      %td= tournament.games
       %td= tournament.day
       %td= tournament.time_tournament_start
       %td= tournament.time_tournament_end
       %td= tournament.address
       %td= tournament.rules
       %td= tournament.nb_players_max
-      %td= tournament.name
       %td= link_to 'Show', tournament
       %td= link_to 'Edit', edit_tournament_path(tournament)
       %td= link_to 'Destroy', tournament, :method => :delete, :data => { :confirm => 'Are you sure?' }

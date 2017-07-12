@@ -1,17 +1,14 @@
 %p#notice= notice
 
 %p
-  %b Tournament:
-  = @game.tournament_id
+  %b Name:
+  = @game.name
 %p
   %b Description:
   = @game.description
 %p
   %b Platform:
   = @game.platform
-%p
-  %b Name:
-  = @game.name
 
 = link_to 'Edit', edit_game_path(@game)
 \|

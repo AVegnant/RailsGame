@@ -2,20 +2,18 @@
 
 %table
   %tr
-    %th Tournament
+    %th Name
     %th Description
     %th Platform
-    %th Name
     %th
     %th
     %th
 
   - @games.each do |game|
     %tr
-      %td= game.tournament_id
+      %td= game.name
       %td= game.description
       %td= game.platform
-      %td= game.name
       %td= link_to 'Show', game
       %td= link_to 'Edit', edit_game_path(game)
       %td= link_to 'Destroy', game, :method => :delete, :data => { :confirm => 'Are you sure?' }
