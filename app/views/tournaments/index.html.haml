@@ -17,7 +17,10 @@
   - @tournaments.each do |tournament|
     %tr
       %td= tournament.name
-      %td= tournament.games
+      %td
+        -tournament.games.each do |game|     #.inject(""){|t1, t2| t1+t2.name+" "}.slice(0..-3)
+          =game.name
+          %br
       %td= tournament.day
       %td= tournament.time_tournament_start
       %td= tournament.time_tournament_end

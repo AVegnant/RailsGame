@@ -41,6 +41,7 @@ class TournamentsController < ApplicationController
   # POST /tournaments.json
   def create
     @tournament = Tournament.new(params[:tournament])
+    @tournament.games = Game.where("id in (?)", params[:games])
 
     respond_to do |format|
       if @tournament.save
@@ -57,6 +58,7 @@ class TournamentsController < ApplicationController
   # PUT /tournaments/1.json
   def update
     @tournament = Tournament.find(params[:id])
+    @tournament.games = Game.where("id in (?)", params[:games])
 
     respond_to do |format|
       if @tournament.update_attributes(params[:tournament])

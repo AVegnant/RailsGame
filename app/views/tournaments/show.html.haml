@@ -5,7 +5,7 @@
   = @tournament.name
 %p
   %b Games:
-  = @tournament.games
+  = @tournament.games.inject(""){|t1, t2| t1+t2.name+", "}.slice(0..-3)   #t1 appelle une variable et on lui attribue la variable de t2
 %p
   %b Day:
   = @tournament.day

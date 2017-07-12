@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20170711153115) do
+ActiveRecord::Schema.define(:version => 20170712100105) do
 
   create_table "games", :force => true do |t|
     t.string   "description"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(:version => 20170711153115) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "gamings", :force => true do |t|
+    t.integer  "game_id"
+    t.integer  "tournament_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "gamings", ["game_id"], :name => "index_gamings_on_game_id"
+  add_index "gamings", ["tournament_id"], :name => "index_gamings_on_tournament_id"
 
   create_table "tournaments", :force => true do |t|
     t.date     "day"

@@ -14,7 +14,10 @@
     %br
     - Game.all.each do |g|
       = g.name
-      = check_box_tag "game[]", g.id, nil, :id => "game_#{g.id}"   #variable
+      - if @tournament.games.include?(g)
+        = check_box_tag "games[]", g.id, nil, :id => "game_#{g.id}", checked: true   #variable
+      - else 
+        = check_box_tag "games[]", g.id, nil, :id => "game_#{g.id}"
       %br
   .field
     = f.label :day
