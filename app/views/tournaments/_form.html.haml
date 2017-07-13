@@ -24,10 +24,7 @@
     = f.date_select :day
   .field
     = f.label :time_tournament_start
-    = f.text_field :time_tournament_start
-  .field
-    = f.label :time_tournament_end
-    = f.text_field :time_tournament_end
+    %input{type: "time", name: "tournament[time_tournament_start]"}
   .field
     = f.label :address
     = f.text_field :address

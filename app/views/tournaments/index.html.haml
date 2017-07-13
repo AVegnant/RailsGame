@@ -1,12 +1,11 @@
 %h1 Listing tournaments
 
-%table
+%table.table.table-bordered.table-hover
   %tr
     %th Name
     %th Games
     %th Day
     %th Time tournament start
-    %th Time tournament end
     %th Address
     %th Rules
     %th Nb players max
@@ -23,14 +22,14 @@
           %br
       %td= tournament.day
       %td= tournament.time_tournament_start
-      %td= tournament.time_tournament_end
       %td= tournament.address
       %td= tournament.rules
       %td= tournament.nb_players_max
       %td= link_to 'Show', tournament
       %td= link_to 'Edit', edit_tournament_path(tournament)
-      %td= link_to 'Destroy', tournament, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Destroy', tournament, :method => :delete, :data => { :confirm => 'Are you sure you want do delete this tournament ?' }
 
 %br
 
-= link_to 'New Tournament', new_tournament_path
+	
+%td= link_to 'New Tournament', new_tournament_path, class: "btn btn-default"
